@@ -58,7 +58,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         ty = "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"
     if is_bot:
         ty += "بوت"
-    await msg.reply(f"**» استخـراج الجلسـة **{ty}** بواسطـة 𝗧𝗲𝗽𝘁𝗵𝗼𝗻 جـارٍ..**.")
+    await msg.reply(f"**» استخـراج الجلسـة **{ty}** بواسطـة 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 جـارٍ..**.")
     user_id = msg.chat.id
     api_id_msg = await bot.ask(user_id, "**⎆ أرسـل الأيبـي أيـدي الخـاص بـك\n للتخطـي أرسـل /skip ...**", filters=filters.text)
     if await cancelled(api_id_msg):
@@ -158,7 +158,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @TepthonSessionBot\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه 🍑 ولا تنسى الانضمام بقناة السورس @Tepthon ."
+    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @TepthonSessionBot\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه 🍑 ولا تنسى الانضمام بقناة السورس @E9N99 ."
     try:
         if not is_bot:
             await client.send_message("me", text)
@@ -167,7 +167,7 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
     except KeyError:
         pass
     await client.disconnect()
-    await bot.send_message(msg.chat.id, "» تم استخـراج {} كود جلسـة.\n\nيرجـى تفقـد الرسائـل المحفوظـة ! \n\n**مستخـرج مـن** @Tepthon".format("تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱" if telethon else "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"))
+    await bot.send_message(msg.chat.id, "» تم استخـراج {} كود جلسـة.\n\nيرجـى تفقـد الرسائـل المحفوظـة ! \n\n**مستخـرج مـن** @E9N99".format("تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱" if telethon else "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"))
 
 
 async def cancelled(msg):
