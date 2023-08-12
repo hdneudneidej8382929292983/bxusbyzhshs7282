@@ -18,14 +18,14 @@ async def start(bot: Client, msg: Message):
 **- إذا كنـت تريـد أن يكون حسـابك في أمـان تام فاختر بايروجـرام أمـا إذا كـان رقمك حقيقـي فاختر تيرمـكس .**
 ** - ملاحظـة :**
 **- احـذر مشاركـة الكود لأحـد لأنه يستطيـع اختراق حسـابك ⚠️ .**
-المطـور : [بلال](tg://user?id={OWNER_ID}) !""",
+المطـور : [اެݪ تِــاެࢪيٰــخَ ¦ BiLaL](tg://user?id={OWNER_ID}) !""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(text="- بـدء استخـراج الجلسـة .", callback_data="generate")
                 ],
                 [
-                    InlineKeyboardButton("- قنـاة السـورس .", url="https://t.me/Tepthon"),
+                    InlineKeyboardButton("- قنـاة السـورس .", url="https://t.me/E9N99"),
                     InlineKeyboardButton("- المطـور .", user_id=OWNER_ID)
                 ]
             ]
