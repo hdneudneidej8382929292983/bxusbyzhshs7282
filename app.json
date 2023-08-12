@@ -11,7 +11,7 @@
     "buildpacks": [{
     "url": "heroku/python"
   }],
-  "repository": "https://github.com/Tepthon/TepthonSessionbotv2",
+  "repository": "https://github.com/E9N99/tested",
   "env": {
     "ENVIRONMENT": {
       "description": "Don't change ANYTHING.",
