@@ -26,6 +26,8 @@ import config
 
 
 ask_ques = "**» يرجـى اختيـار أحد الجلسـات الآتيـة إذا كنت تريـد استخـراج تيرمكـس فاختـر تيرمكـس أما إذا كنت تريد استخـراج بايروجـرام اختـر بايروجرام  ⌬  ..**"
+
+
 buttons_ques = [
     [
         InlineKeyboardButton("- بايروجـرام", callback_data="pyrogram"),
@@ -53,9 +55,9 @@ async def main(_, msg):
 
 async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bool = False):
     if telethon:
-        ty = "تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱"
-    else:
         ty = "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"
+    else:
+        ty = "تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱"
     if is_bot:
         ty += "بوت"
     await msg.reply(f"**» استخـراج الجلسـة **{ty}** بواسطـة 𝗦𝞝𝗗𝙏𝙃𝙊𝙉 جـارٍ..**.")
@@ -158,17 +160,14 @@ async def generate_session(bot: Client, msg: Message, telethon=False, is_bot: bo
         string_session = client.session.save()
     else:
         string_session = await client.export_session_string()
-    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @TepthonSessionBot\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه 🍑 ولا تنسى الانضمام بقناة السورس @E9N99 ."
+    text = f"**هذا هو {ty} كـود جلسـة** \n\n`{string_session}` \n\n**مستخـرج مـن :** @E9N99\n🍒 **ملاحظـة :** لا تشارك الكود لأحـد لأنـه يستطيع اختراق حسابك من خلالـه 🍑 ولا تنسى الانضمام بقناة السورس @E9N99 ."
     try:
         if not is_bot:
-            await client.send_message("me", text)
+            await bot.send_message(msg.chat.id, text)
         else:
             await bot.send_message(msg.chat.id, text)
     except KeyError:
         pass
-    await client.disconnect()
-    await bot.send_message(msg.chat.id, "» تم استخـراج {} كود جلسـة.\n\nيرجـى تفقـد الرسائـل المحفوظـة ! \n\n**مستخـرج مـن** @E9N99".format("تيرمكـس - 𝐭𝐞𝐫𝐦𝐮𝐱" if telethon else "بايروجـرام - 𝐩𝐲𝐫𝐨𝐠𝐫𝐚𝐦"))
-
 
 async def cancelled(msg):
     if "/cancel" in msg.text:
